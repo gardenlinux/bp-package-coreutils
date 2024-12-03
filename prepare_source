@@ -1,6 +1,7 @@
 pkg=coreutils
 version_orig=9.5
 version="$version_orig-0"
+distribution="testing"
 git_src --branch "v$version_orig" https://github.com/$pkg/$pkg
 apt_src --ignore-orig coreutils
 apply_patches
