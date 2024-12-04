@@ -2,7 +2,7 @@ apt-get install --no-install-recommends -y curl ca-certificates
 
 pkg=coreutils
 version_orig=9.5
-version="$version_orig-2"
+version="$version_orig-1"
 curl 'https://ftp.gnu.org/gnu/coreutils/coreutils-9.5.tar.xz' | xz -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
 apt_src --ignore-orig coreutils
 apply_patches
