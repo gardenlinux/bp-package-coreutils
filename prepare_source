@@ -1,7 +1,8 @@
+apt-get install --no-install-recommends -y curl ca-certificates
+
 pkg=coreutils
 version_orig=9.5
 version="$version_orig-2"
-distribution="testing"
-git_src --branch "v$version_orig" https://github.com/$pkg/$pkg
+curl 'https://ftp.gnu.org/gnu/coreutils/coreutils-9.5.tar.xz' | xz -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
 apt_src --ignore-orig coreutils
 apply_patches
